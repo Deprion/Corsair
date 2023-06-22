@@ -1,0 +1,7 @@
+howToTitle:How to play;
+howTo:You need to complete the stage by collecting all the coins. After completing all 5 stages, you will move on to the next level.
+
+To control your ship, just tap on the screen and dodge the projectiles.;
+play:Play;
+harbor:Harbor;
+upgrades:Upgrades;
