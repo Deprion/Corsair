@@ -1,0 +1,7 @@
+howToTitle:Cómo jugar;
+howTo:Tienes que completar la etapa recogiendo todas las monedas. Después de completar las 5 etapas, pasarás al siguiente nivel.
+
+Para controlar tu nave, solo toca la pantalla y esquiva los proyectiles.;
+play:Jugar;
+harbor:Puerto;
+upgrades:Actualizaciones;

@@ -23,6 +23,8 @@ public class TranslateManager : MonoBehaviour
     {
         if (Application.systemLanguage == SystemLanguage.Russian)
             Fill(AddressableLoader.inst.GetLanguage("Russian"));
+        else if (Application.systemLanguage == SystemLanguage.Spanish)
+            Fill(AddressableLoader.inst.GetLanguage("Spanish"));
         else
             Fill(AddressableLoader.inst.GetLanguage("English"));
 

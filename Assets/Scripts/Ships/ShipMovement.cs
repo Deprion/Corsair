@@ -13,6 +13,7 @@ public class ShipMovement : MonoBehaviour
 
     private void Awake()
     {
+        speed = DataManager.instance.data.harbor.GetThis().Speed;
         Events.Click.AddListener(ChangeDir);
     }
 

@@ -73,5 +73,6 @@ public class GameManager : MonoBehaviour
     {
         Events.AddCoin.RemoveListener(CoinRemove);
         Events.End.RemoveListener(End);
+        Events.Balance.Invoke(DataManager.instance.data.Money);
     }
 }

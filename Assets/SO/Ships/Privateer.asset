@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: "\u041A\u0430\u043F\u0435\u0440"
   Sprite: {fileID: 746740963, guid: 174e985b787d1f143adf111bdab14adb, type: 3}
   LvlUpStr: 
-  BaseSpeed: 0
+  BaseSpeed: 1
   HP: 0
   LvlUpShips:
   - "\u041A\u0430\u043F\u0435\u0440 \u043F\u0440\u043E\u0432\u043E\u0440\u043D\u044B\u0439"

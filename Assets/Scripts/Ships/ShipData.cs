@@ -8,6 +8,13 @@ public class ShipData
     public int Level;
     public int Exp, MaxExp;
     public float BaseSpeed;
+    public float Speed 
+    { 
+        get
+        { 
+            return BaseSpeed + Level * 0.02f;
+        }
+    }
     public int HP;
 
     public string LvlUpStr;
@@ -23,12 +30,7 @@ public class ShipData
         { 
             Exp -= MaxExp;
             Level++;
-            MaxExp = 100 * Level;
-            if (Level >= 5)
-            {
-                Exp = 777;
-                MaxExp = 777;
-            }
+            MaxExp = 100 * (int)Mathf.Pow(Level, 2);
         }
     }
 
