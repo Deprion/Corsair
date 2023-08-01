@@ -301,6 +301,7 @@ MonoBehaviour:
   objects:
   - {fileID: 1682354505135137707, guid: e20bc3d6c682b2d43bdcea853dd3c8a0, type: 3}
   - {fileID: 1825366456782151920, guid: 67b683ff485e8534d890fbdf28ebfbc7, type: 3}
+  - {fileID: 4822163027523662937, guid: ca37758c78c311a49bcee11fc4ad52f7, type: 3}
   - {fileID: 2912391023576796988, guid: 82e600642e1c6fb45bc2177dfb89dce9, type: 3}
 --- !u!4 &836038443
 Transform:

@@ -12,7 +12,7 @@ public class HarborUI : MonoBehaviour
         if (ship == null)
         {
             shipImage.gameObject.SetActive(false);
-            shipName.text = "Пусто";
+            shipName.text = TranslateManager.inst.GetText("empty");
             shipLvl.text = string.Empty;
             shipExp.text = string.Empty;
 
@@ -21,8 +21,8 @@ public class HarborUI : MonoBehaviour
 
         shipImage.gameObject.SetActive(true);
         shipImage.sprite = ship.Sprite;
-        shipName.text = ship.Name;
-        shipLvl.text = $"Уровень: {ship.Level}";
-        shipExp.text = $"Опыт: {ship.Exp}/{ship.MaxExp}";
+        shipName.text = TranslateManager.inst.GetText(ship.Name);
+        shipLvl.text = $"{TranslateManager.inst.GetText("level")}: {ship.Level}";
+        shipExp.text = $"{TranslateManager.inst.GetText("exp")}: {ship.Exp}/{ship.MaxExp}";
     }
 }

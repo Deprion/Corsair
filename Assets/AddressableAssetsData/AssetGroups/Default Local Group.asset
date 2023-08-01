@@ -22,11 +22,19 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - language
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fdec0586ff1cfc34a896fb604f3ddc1a
     m_Address: Assets/Language/English.txt
     m_ReadOnly: 0
     m_SerializedLabels:
     - language
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9240686e43fa85641a1ecbff6433f927
+    m_Address: Assets/Language/Spanish.txt
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - language
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 3b3e2c3419c67704e8ad06623cebdbf3, type: 2}
   m_SchemaSet:

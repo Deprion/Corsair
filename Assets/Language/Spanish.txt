@@ -1,7 +1,36 @@
-howToTitle:C�mo jugar;
-howTo:Tienes que completar la etapa recogiendo todas las monedas. Despu�s de completar las 5 etapas, pasar�s al siguiente nivel.
+howToTitle:Cómo jugar;
+howTo:Tienes que completar la etapa recogiendo todas las monedas. Después de completar las 5 etapas, pasarás al siguiente nivel.
 
 Para controlar tu nave, solo toca la pantalla y esquiva los proyectiles.;
 play:Jugar;
 harbor:Puerto;
 upgrades:Actualizaciones;
+balance:Balance;
+record:Récord;
+level:Nivel;
+exp:Experiencia;
+empty:Vacío;
+price:Precio;
+buy:Comprar;
+coins:Monedas;
+restart:Reiniciar;
+exit:Salida;
+loseInfo:Un proyectil perdido inundó el barco de valientes marineros.
+
+¿Volver a intentarlo o salir del menú?;
+frigate:Fragata;
+drakkar:Drakkar;
+privateer:Corsario;
+galleon:Galeón;
+frigateBuy:Fragata
+
+Antiestético pero ágil;
+drakkarBuy:Drakkar
+
+Lento y duradero;
+privateerBuy:Corsario
+
+Elusivo para la ley;
+galleonBuy:Galeón
+
+El brillo dorado de las velas ciega a los oponentes;

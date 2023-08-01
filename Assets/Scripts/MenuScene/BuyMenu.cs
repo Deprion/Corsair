@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class BuyMenu : MonoBehaviour
@@ -9,16 +10,25 @@ public class BuyMenu : MonoBehaviour
 
     [SerializeField] private HarborManager harb;
 
+    [SerializeField] private TMP_Text priceTxt, balanceTxt; 
+
     private string toBuy = string.Empty;
 
     private void Awake()
     {
-        fregate.onClick.AddListener(() => SetShip(fregate, "Фрегат"));
-        drakkar.onClick.AddListener(() => SetShip(drakkar, "Драккар"));
-        galleon.onClick.AddListener(() => SetShip(galleon, "Галеон"));
-        privateer.onClick.AddListener(() => SetShip(privateer, "Капер"));
+        priceTxt.text = $"{TranslateManager.inst.GetText("price")}: 200";
+        fregate.onClick.AddListener(() => SetShip(fregate, "frigate"));
+        drakkar.onClick.AddListener(() => SetShip(drakkar, "drakkar"));
+        galleon.onClick.AddListener(() => SetShip(galleon, "galleon"));
+        privateer.onClick.AddListener(() => SetShip(privateer, "privateer"));
 
         buyBtn.onClick.AddListener(BuyShip);
+    }
+
+    private void OnEnable()
+    {
+        balanceTxt.text = $"{TranslateManager.inst.GetText("balance")}: " +
+            $"{DataManager.instance.data.Money}";
     }
 
     private void SetShip(Button btn, string name)

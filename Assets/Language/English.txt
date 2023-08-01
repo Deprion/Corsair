@@ -5,3 +5,32 @@ To control your ship, just tap on the screen and dodge the projectiles.;
 play:Play;
 harbor:Harbor;
 upgrades:Upgrades;
+balance:Balance;
+record:Record;
+level:Level;
+exp:Exp;
+empty:Empty;
+price:Price;
+buy:Buy;
+coins:Coins;
+restart:Restart;
+exit:Exit;
+loseInfo:A stray shell flooded the ship of the brave sailors.
+
+Try again or exit to menu?;
+frigate:Frigate;
+drakkar:Drakkar;
+privateer:Privateer;
+galleon:Galleon;
+frigateBuy:Frigate
+
+Unsightly, but nimble;
+drakkarBuy:Drakkar
+
+Slow and durable;
+privateerBuy:Privateer
+
+Elusive to the law;
+galleonBuy:Galleon
+
+The golden sheen of the sails dazzles opponents;

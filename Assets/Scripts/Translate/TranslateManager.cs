@@ -1,4 +1,6 @@
+using JetBrains.Annotations;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
 using UnityEngine;
 
@@ -21,14 +23,44 @@ public class TranslateManager : MonoBehaviour
 
     private void Setup()
     {
-        if (Application.systemLanguage == SystemLanguage.Russian)
-            Fill(AddressableLoader.inst.GetLanguage("Russian"));
-        else if (Application.systemLanguage == SystemLanguage.Spanish)
-            Fill(AddressableLoader.inst.GetLanguage("Spanish"));
-        else
-            Fill(AddressableLoader.inst.GetLanguage("English"));
+        if (PlayerPrefs.HasKey("language"))
+        {
+            GetLanguage(PlayerPrefs.GetInt("language"));
+
+            AddressableLoader.Loaded.RemoveListener(Setup);
+
+            return;
+        }
+
+        GetLanguage((int)Application.systemLanguage);
+
+        PlayerPrefs.SetInt("language", (int)Application.systemLanguage);
 
         AddressableLoader.Loaded.RemoveListener(Setup);
+    }
+
+    public void Reload()
+    {
+        Setup();
+    }
+
+    private void GetLanguage(int num)
+    {
+        switch (num)
+        {
+            case 30:
+                Fill(AddressableLoader.inst.GetLanguage("Russian"));
+                break;
+            case 34:
+                Fill(AddressableLoader.inst.GetLanguage("Spanish"));
+                break;
+            case 10:
+                Fill(AddressableLoader.inst.GetLanguage("English"));
+                break;
+            default: 
+                Fill(AddressableLoader.inst.GetLanguage("English"));
+                break;
+        }
     }
 
     private void Fill(TextAsset txt)

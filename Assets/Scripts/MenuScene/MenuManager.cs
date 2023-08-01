@@ -22,7 +22,8 @@ public class MenuManager : MonoBehaviour
         musicBtn.onClick.AddListener(audioManager.MuteMusic);
         soundBtn.onClick.AddListener(audioManager.MuteSound);
 
-        lvlRecordTxt.text = $"Рекорд: {PlayerPrefs.GetInt("Lvl")}";
+        lvlRecordTxt.text = 
+            $"{TranslateManager.inst.GetText("record")}: {PlayerPrefs.GetInt("Lvl")}";
     }
 
     private void Play()
@@ -46,7 +47,8 @@ public class MenuManager : MonoBehaviour
         }
     }
 
-    private void Balance(int num) => balanceTxt.text = $"Баланс: {num}";
+    private void Balance(int num) => balanceTxt.text = 
+        $"{TranslateManager.inst.GetText("balance")}: {num}";
 
     private void OnDestroy()
     {

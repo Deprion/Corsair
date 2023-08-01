@@ -10,8 +10,8 @@ public class GameUI : MonoBehaviour
 
     private void Awake()
     {
-        balance.text = $"Монеты: {counter}";
-        level.text = $"Уровень: {levelTxt}";
+        balance.text = $"{TranslateManager.inst.GetText("coins")}: {counter}";
+        level.text = $"{TranslateManager.inst.GetText("level")}: {levelTxt}";
         Events.AddCoin.AddListener(AddCoin);
         Events.Level.AddListener(Level);
     }
@@ -19,7 +19,7 @@ public class GameUI : MonoBehaviour
     private void AddCoin()
     {
         counter++;
-        balance.text = $"Монеты: {counter}";
+        balance.text = $"{TranslateManager.inst.GetText("coins")}: {counter}";
 
         DataManager.instance.data.Money++;
     }
@@ -27,7 +27,7 @@ public class GameUI : MonoBehaviour
     private void Level()
     {
         levelTxt++;
-        level.text = $"Уровень: {levelTxt}";
+        level.text = $"{TranslateManager.inst.GetText("level")}: {levelTxt}";
 
         if (PlayerPrefs.GetInt("Lvl") < levelTxt)
         {
