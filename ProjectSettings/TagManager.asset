@@ -7,6 +7,8 @@ TagManager:
   - Audio
   - Coin
   - Enemy
+  - End
+  - EventEnemy
   layers:
   - Default
   - TransparentFX

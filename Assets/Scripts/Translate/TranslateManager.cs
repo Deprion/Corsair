@@ -1,6 +1,5 @@
-using JetBrains.Annotations;
+using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
 using UnityEngine;
 
@@ -42,6 +41,8 @@ public class TranslateManager : MonoBehaviour
     public void Reload()
     {
         Setup();
+
+        Analytics.inst.UpdateLang();
     }
 
     private void GetLanguage(int num)

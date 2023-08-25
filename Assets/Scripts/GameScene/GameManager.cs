@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -8,7 +9,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Cannon cannon;
 
     [SerializeField] private GameObject endMenu;
-    [SerializeField] private Button restart, exit;
+    [SerializeField] private Button restart, exit, adBtn;
+
+    [SerializeField] private TMP_Text endText;
+
+    private int coinCollected, expToAdd;
 
     private int coinLeft = 16;
 
@@ -26,16 +31,46 @@ public class GameManager : MonoBehaviour
         cannon.Setup(ship);
 
         SpawnCoins();
+
+        AdManager.inst.AdReward += AdReward;
+
+        adBtn.onClick.AddListener(AdManager.inst.ShowRewardedAd);
+    }
+
+    private void AdReward()
+    {
+        endText.text = $"{TranslateManager.inst.GetText("coinsGained")} : {coinCollected * 2}(2X)" +
+            $"\n{TranslateManager.inst.GetText("expGained")} : {expToAdd * 2}(2X)";
+
+        adBtn.gameObject.SetActive(false);
+
+        DataManager.instance.data.Money += coinCollected;
+
+        DataManager.instance.data.harbor.GetThis().AddExp(expToAdd);
     }
 
     private void End()
     {
-        DataManager.instance.data.harbor.GetThis().AddExp(Random.Range(5, 15));
+        if (coinCollected > 16)
+        {
+            adBtn.gameObject.SetActive(true);
+
+            expToAdd = (int)Random.Range(coinCollected * 0.25f, coinCollected * 0.75f);
+
+            DataManager.instance.data.harbor.GetThis().AddExp(expToAdd);
+        }
+
+        endText.text = $"{TranslateManager.inst.GetText("coinsGained")} : {coinCollected}" +
+            $"\n{TranslateManager.inst.GetText("expGained")} : {expToAdd}";
+
+        DataManager.instance.data.Money += coinCollected;
+
         endMenu.SetActive(true);
     }
 
     private void CoinRemove()
     {
+        coinCollected++;
         coinLeft--;
 
         if (coinLeft > 0) return;
@@ -73,5 +108,6 @@ public class GameManager : MonoBehaviour
         Events.AddCoin.RemoveListener(CoinRemove);
         Events.End.RemoveListener(End);
         Events.Balance.Invoke(DataManager.instance.data.Money);
+        AdManager.inst.AdReward -= AdReward;
     }
 }

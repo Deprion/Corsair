@@ -7,14 +7,19 @@ public class Cannon : MonoBehaviour
 
     [SerializeField] private AudioSource source;
 
-    private float interval = 1.5f;
-    private float left = 1.5f;
+    private float interval = 2;
+    private float left = 2;
 
     public void Setup(GameObject go)
     {
         Events.Level.AddListener(Level);
 
         ship = go;
+    }
+
+    public void ChangeInterval(float val)
+    { 
+        interval += val;
     }
 
     private void Level()
@@ -32,12 +37,16 @@ public class Cannon : MonoBehaviour
         {
             Vector2 pos = ship.GetComponent<ShipMovement>().Next();
 
+            pos.x += Random.Range(-1f, 1f);
+            pos.y += Random.Range(-1f, 1f);
+
             left = interval;
 
             if (PlayerPrefs.GetInt("muteS") == 0)
                 source.Play();
 
             var mis = Instantiate(prefabMis);
+            mis.transform.localPosition = transform.position;
             mis.GetComponent<Missile>().Setup(pos);
         }
     }

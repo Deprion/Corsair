@@ -30,6 +30,14 @@ public class DataManager : MonoBehaviour
         }
 
         data = JsonConvert.DeserializeObject<Data>(File.ReadAllText(path));
+
+        data.firstLaunch = false;
+
+        if (data.version < 1)
+        {
+            data.version = 1.1;
+            data.Money += 400;
+        }
     }
 
     private void SaveData()
@@ -41,11 +49,15 @@ public class DataManager : MonoBehaviour
     {
         public Harbor harbor;
         public int Money;
+        public double version;
+        public bool firstLaunch;
 
         public Data()
         {
             harbor = new Harbor(DataHolder.inst.Ships[0]);
             Money = 0;
+            version = 1.1;
+            firstLaunch = true;
         }
     }
 

@@ -7,19 +7,30 @@ public class ShipData
     [JsonIgnore] public Sprite Sprite { get { return DataHolder.inst.GetByName(Name).Sprite; } }
     public int Level;
     public int Exp, MaxExp;
-    public float BaseSpeed;
     public float Speed 
     { 
         get
-        { 
-            return BaseSpeed + Level * 0.02f;
+        {
+            return DataHolder.inst.GetByName(Name).BaseSpeed;
         }
     }
-    public int HP;
+    public int HP
+    {
+        get
+        { 
+            return DataHolder.inst.GetByName(Name).HP;
+        }
+    }
 
     public string LvlUpStr;
 
-    public string[] LvlUpShips;
+    public string[] LvlUpShips
+    { 
+        get
+        {
+            return DataHolder.inst.GetByName(Name).LvlUpShips;
+        }
+    }
 
     public void AddExp(int exp)
     {
@@ -44,9 +55,6 @@ public class ShipData
     public ShipData(ShipSO ship)
     { 
         Name = ship.Name;
-        BaseSpeed = ship.BaseSpeed;
-        HP = ship.HP;
-        LvlUpShips = ship.LvlUpShips;
         Level = 1;
         MaxExp = 100;
         Exp = 0;

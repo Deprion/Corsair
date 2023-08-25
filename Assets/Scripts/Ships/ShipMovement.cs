@@ -9,8 +9,6 @@ public class ShipMovement : MonoBehaviour
 
     private int dir = -1;
 
-    [SerializeField] private Rigidbody2D rb;
-
     private void Awake()
     {
         speed = DataManager.instance.data.harbor.GetThis().Speed;
@@ -22,6 +20,7 @@ public class ShipMovement : MonoBehaviour
         dir *= -1;
     }
 
+#if UNITY_EDITOR
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
@@ -29,10 +28,21 @@ public class ShipMovement : MonoBehaviour
             dir *= -1;
         }
     }
+#endif
 
     public Vector2 Next()
     {
         var temp = angle + (Time.fixedDeltaTime + 0.5f) * speed * dir;
+
+        x = Mathf.Cos(temp) * radius;
+        y = Mathf.Sin(temp) * radius;
+
+        return new Vector2(x, y);
+    }
+
+    public Vector2 NextTest()
+    {
+        var temp = angle + (Time.fixedDeltaTime + 0.1f) * speed * dir;
 
         x = Mathf.Cos(temp) * radius;
         y = Mathf.Sin(temp) * radius;

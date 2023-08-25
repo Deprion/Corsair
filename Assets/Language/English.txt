@@ -1,5 +1,6 @@
 howToTitle:How to play;
-howTo:You need to complete the stage by collecting all the coins. After completing all 5 stages, you will move on to the next level.
+howTo:You need to collect coins to advance to the next level.
+Get experience for the ship to improve it.
 
 To control your ship, just tap on the screen and dodge the projectiles.;
 play:Play;
@@ -15,13 +16,21 @@ buy:Buy;
 coins:Coins;
 restart:Restart;
 exit:Exit;
-loseInfo:A stray shell flooded the ship of the brave sailors.
-
-Try again or exit to menu?;
+loseInfo:You have received a reward!;
+coinsGained:Coins received;
+expGained:Exp received;
 frigate:Frigate;
 drakkar:Drakkar;
 privateer:Privateer;
 galleon:Galleon;
+frigate1:Frigate nimble;
+drakkar1:Drakkar light;
+privateer1:Privateer elusive;
+galleon1:Galleon fast;
+frigate2:Frigate quick;
+drakkar2:Drakkar heavy;
+privateer2:Privateer strong;
+galleon2:Galleon powerfull;
 frigateBuy:Frigate
 
 Unsightly, but nimble;
@@ -34,3 +43,9 @@ Elusive to the law;
 galleonBuy:Galleon
 
 The golden sheen of the sails dazzles opponents;
+ad:Ad 2X;
+back:Back;
+upgrade:Upgrade;
+hp:Health;
+speed:Speed;
+upInfo:Upgrade price - 500 coins;

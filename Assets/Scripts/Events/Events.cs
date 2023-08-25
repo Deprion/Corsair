@@ -7,4 +7,5 @@ public static class Events
     public static SimpleEvent Level = new SimpleEvent();
     public static SimpleEvent End = new SimpleEvent();
     public static SimpleEvent Click = new SimpleEvent();
+    public static SimpleEvent GetHit = new SimpleEvent();
 }

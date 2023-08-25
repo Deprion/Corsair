@@ -42,4 +42,9 @@ public class Harbor
     {
         ships[0] = new ShipData(ship);
     }
+
+    public void UpgradeShip(ShipSO so)
+    {
+        ships[index] = new ShipData(so);
+    }
 }

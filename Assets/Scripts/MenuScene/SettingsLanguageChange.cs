@@ -1,4 +1,3 @@
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -9,6 +8,8 @@ public class SettingsLanguageChange : MonoBehaviour
     [SerializeField] private Button btn;
     [SerializeField] private Image image;
     [SerializeField] private Button backBtn;
+
+    [SerializeField] private GameObject menu, stgs;
 
     private int[] indexes = new int[] { 30, 34, 10};
 
@@ -36,6 +37,12 @@ public class SettingsLanguageChange : MonoBehaviour
                     break;
             }
         }
+
+        backBtn.onClick.AddListener(() =>
+        {
+            stgs.SetActive(false);
+            menu.SetActive(true);
+        });
     }
 
     private void ChangeLanguage()

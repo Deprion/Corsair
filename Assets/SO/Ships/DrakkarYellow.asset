@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3480b3fe0e45b4c4dbc15c2a4f367148, type: 3}
   m_Name: DrakkarYellow
   m_EditorClassIdentifier: 
-  Name: "\u0414\u0440\u0430\u043A\u043A\u0430\u0440 \u0442\u044F\u0436\u0435\u043B\u044B\u0439"
+  Name: drakkar2
   Sprite: {fileID: 1114680113, guid: 174e985b787d1f143adf111bdab14adb, type: 3}
   LvlUpStr: "\u041F\u0440\u043E\u0447\u043D\u044B\u0439, \u043D\u043E \u043C\u0435\u0434\u043B\u0438\u0442\u0435\u043B\u044C\u043D\u044B\u0439"
-  BaseSpeed: 1
-  HP: 4
+  BaseSpeed: 1.1
+  HP: 5
   LvlUpShips: []

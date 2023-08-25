@@ -3,7 +3,7 @@ using UnityEngine;
 public class Missile : MonoBehaviour
 {
     private float leftTime = 10;
-    private float speed = 2;
+    private float speed = 10;
 
     private Vector3 dir;
 
@@ -22,5 +22,8 @@ public class Missile : MonoBehaviour
     public void Setup(Vector3 pos)
     {
         dir = pos - transform.localPosition;
+
+        if (dir.magnitude > 1)
+            dir.Normalize();
     }
 }

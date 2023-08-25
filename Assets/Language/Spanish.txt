@@ -1,5 +1,6 @@
 howToTitle:Cómo jugar;
-howTo:Tienes que completar la etapa recogiendo todas las monedas. Después de completar las 5 etapas, pasarás al siguiente nivel.
+howTo:Necesitas recolectar monedas para avanzar al siguiente nivel.
+Consigue experiencia para la nave para mejorarla.
 
 Para controlar tu nave, solo toca la pantalla y esquiva los proyectiles.;
 play:Jugar;
@@ -15,13 +16,21 @@ buy:Comprar;
 coins:Monedas;
 restart:Reiniciar;
 exit:Salida;
-loseInfo:Un proyectil perdido inundó el barco de valientes marineros.
-
-¿Volver a intentarlo o salir del menú?;
+loseInfo:¡Has recibido una recompensa!;
+coinsGained:Monedas recibidas;
+expGained:Exp recibidas;
 frigate:Fragata;
 drakkar:Drakkar;
 privateer:Corsario;
 galleon:Galeón;
+frigate1:Fragata ágil;
+drakkar1:Luz de Drakkar;
+privateer1:Corsario esquivo;
+galleon1:Galeón rápido;
+frigate2:Fragata rápida;
+drakkar2:Drakkar pesado;
+privateer2:Corsario fuerte;
+galleon2:Galeón poderoso;
 frigateBuy:Fragata
 
 Antiestético pero ágil;
@@ -34,3 +43,9 @@ Elusivo para la ley;
 galleonBuy:Galeón
 
 El brillo dorado de las velas ciega a los oponentes;
+ad:Ad 2X;
+back:Espalda;
+upgrade:Actualización;
+hp:Salud;
+speed:Velocidad;
+upInfo:Precio de actualización - 500 monedas;

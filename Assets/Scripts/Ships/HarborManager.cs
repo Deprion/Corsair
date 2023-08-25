@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class HarborManager : MonoBehaviour
 {
-    [SerializeField] private Button leftBtn, rightBtn, addBtn;
+    [SerializeField] private Button leftBtn, rightBtn, addBtn, upgradeBtn;
     private ShipData curShip;
 
     public Harbor harbor;
@@ -26,8 +26,8 @@ public class HarborManager : MonoBehaviour
         {
             addBtn.gameObject.SetActive(false);
 
-            /*if (curShip.Level >= 5 && curShip.LvlUpShips[0] != string.Empty)
-                upgradeBtn.gameObject.SetActive(true);*/
+            if (curShip.LvlUpShips.Length != 0 && curShip.Level >= 3)
+                upgradeBtn.gameObject.SetActive(true);
         }
         else addBtn.gameObject.SetActive(true);
 
@@ -50,8 +50,24 @@ public class HarborManager : MonoBehaviour
         addBtn.gameObject.SetActive(false);
     }
 
+    public void UpgradeShip(ShipSO so)
+    {
+        harbor.UpgradeShip(so);
+        DataManager.instance.data.Money -= 500;
+        Events.Balance.Invoke(DataManager.instance.data.Money);
+
+        curShip = harbor.GetThis();
+        Global.Name = curShip.Name;
+
+        Events.ShipUpdate.Invoke(curShip);
+        UpdateUI();
+        upgradeBtn.gameObject.SetActive(false);
+    }
+
     private void Switch(bool isRight)
     {
+        upgradeBtn.gameObject.SetActive(false);
+
         if (isRight) curShip = harbor.GetRight(curShip);
         else curShip = harbor.GetLeft(curShip);
 
@@ -62,8 +78,8 @@ public class HarborManager : MonoBehaviour
             Global.Name = curShip.Name;
             addBtn.gameObject.SetActive(false);
 
-            /*if (curShip.Level >= 5 && curShip.LvlUpShips[0] != string.Empty)
-                upgradeBtn.gameObject.SetActive(true);*/
+            if (curShip.LvlUpShips.Length != 0 && curShip.Level >= 3)
+                upgradeBtn.gameObject.SetActive(true);
         }
         else
         {
