@@ -31,10 +31,6 @@ public class GameManager : MonoBehaviour
         cannon.Setup(ship);
 
         SpawnCoins();
-
-        AdManager.inst.AdReward += AdReward;
-
-        adBtn.onClick.AddListener(AdManager.inst.ShowRewardedAd);
     }
 
     private void AdReward()
@@ -108,6 +104,5 @@ public class GameManager : MonoBehaviour
         Events.AddCoin.RemoveListener(CoinRemove);
         Events.End.RemoveListener(End);
         Events.Balance.Invoke(DataManager.instance.data.Money);
-        AdManager.inst.AdReward -= AdReward;
     }
 }
